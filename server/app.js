@@ -11,6 +11,14 @@ var router = require('./routes.js');
 var app = express();
 module.exports.app = app;
 
+db.connection.connect(function(err) {
+  if (err) {
+    console.error('error connecting: ' + err.stack);
+    return;
+  } 
+  console.log('connected as id ' + db.connection.threadId);
+});
+db.connection.query('use chat');
 // Set what we are listening on.
 app.set('port', 3000);
 
@@ -29,4 +37,5 @@ if (!module.parent) {
   app.listen(app.get('port'));
   console.log('Listening on', app.get('port'));
 }
+
 

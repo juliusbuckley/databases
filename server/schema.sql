@@ -2,16 +2,26 @@ CREATE DATABASE IF NOT EXISTS chat;
 
 USE chat;
 
-CREATE TABLE IF NOT EXISTS name (
-    id INTEGER PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(20)
+DROP TABLE IF EXISTS `users`;
+    
+CREATE TABLE `users` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `username` VARCHAR(20) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
 );
-/*
-CREATE TABLE messages (
-  /* Describe your table here.*/
 
--- );
 
+DROP TABLE IF EXISTS `messages`;
+    
+CREATE TABLE `messages` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `message` VARCHAR(100) NULL DEFAULT NULL,
+  `username` VARCHAR(20) NULL DEFAULT NULL,
+  `roomname` VARCHAR(20) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+-- ALTER TABLE `messages` ADD FOREIGN KEY (username) REFERENCES `users` (`id`);
 /* Create other tables and define schemas for them here! */
 
 
