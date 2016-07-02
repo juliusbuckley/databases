@@ -8,50 +8,7 @@ var app = {
   roomname: 'lobby',
   lastMessageId: 0,
   friends: {},
-  // This is our code 
-
-  /*
-  data: {
-    username: 'Edmund',
-    message: 'this is from post',
-    roomname: 'lobby'
-  },
-  init: function() {
-    console.log('this is init');
-
-
-    $.ajax({
-      url: app.server,
-      type: 'POST',
-      data: JSON.stringify(app.data),
-      contentType: 'application/json',
-      success: function (data) {
-        // Trigger a fetch to update the messages, pass true to animate
-        //app.fetch();
-        console.log('data in post', data);
-      },
-      error: function (data) {
-        console.error('chatterbox: Failed to send message', data);
-      }
-    });
-
-    $.ajax({
-      url: app.server,
-      type: 'GET',
-      contentType: 'application/json',
-      data: {},
-      success: function(data) {
-        console.log(data); 
-      },
-      error: function(data) {
-        console.error('chatterbox: Failed to fetch messages');
-      }
-    });
-
-
-  }
- */
-
+ 
   init: function() {
     // Get username
     app.username = window.location.search.substr(10);
